@@ -1,0 +1,9 @@
+sudo: require
+services: 
+  - docker
+before_install:
+  - docker build -t nasir9622/docker-reacts -f Dockerfile.dev .
+
+script:
+  - docker run nasir9622/docker-reacts npm run test -- --coverage    
+
